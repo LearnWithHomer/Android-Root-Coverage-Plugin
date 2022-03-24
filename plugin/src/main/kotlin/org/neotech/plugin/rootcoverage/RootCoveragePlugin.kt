@@ -218,7 +218,7 @@ class RootCoveragePlugin : Plugin<Project> {
         when (extension) {
             is LibraryExtension -> {
                 extension.libraryVariants.all { variant ->
-                    if (variant.buildType.isTestCoverageEnabled && variant.name.capitalize() == buildVariant.capitalize()) {
+                    if (variant.name.capitalize() == buildVariant.capitalize()) {
                         if (subProject.plugins.withType(JacocoPlugin::class.java).isEmpty()) {
                             subProject.plugins.apply(JacocoPlugin::class.java)
                             subProject.logJacocoHasBeenApplied()
@@ -229,7 +229,7 @@ class RootCoveragePlugin : Plugin<Project> {
             }
             is AppExtension -> {
                 extension.applicationVariants.all { variant ->
-                    if (variant.buildType.isTestCoverageEnabled && variant.name.capitalize() == buildVariant.capitalize()) {
+                    if (variant.name.capitalize() == buildVariant.capitalize()) {
                         if (subProject.plugins.withType(JacocoPlugin::class.java).isEmpty()) {
                             subProject.plugins.apply(JacocoPlugin::class.java)
                             subProject.logJacocoHasBeenApplied()
