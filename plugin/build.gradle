@@ -52,7 +52,7 @@ publishing {
 gradlePlugin {
     plugins {
         rootCoverage {
-            id = 'nl.neotech.plugin.rootcoverage'
+            id = 'com.github.LearnWithHomer.Android-Root-Coverage-Plugin'
             implementationClass = 'org.neotech.plugin.rootcoverage.RootCoveragePlugin'
         }
     }
